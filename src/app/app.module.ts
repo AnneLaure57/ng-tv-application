@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
-import { FavoritesViewComponent } from './modules/features/favorites-view/favorites-view.component';
+import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.component';
 
 @NgModule({
   declarations: [
