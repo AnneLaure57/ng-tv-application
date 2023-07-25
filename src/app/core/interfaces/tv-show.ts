@@ -1,4 +1,4 @@
-import { Status } from "../../shared/constants/status";
+export type Status = "Canceled/Ended" | "Ended" | "Running" | "New Series" | "To Be Determined";
 
 export interface TvShow {
   id:                   number;

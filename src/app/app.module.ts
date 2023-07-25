@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
 import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.component';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

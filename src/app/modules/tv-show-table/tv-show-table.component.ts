@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { TvShow } from './../../core/interfaces/tv-show';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
+
+  @Input() shows!: TvShow[];
+
+  @Input() isLoading = false;
 
 }
