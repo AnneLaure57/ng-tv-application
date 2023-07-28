@@ -2,8 +2,7 @@ import { Injectable, Signal, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TvShow } from 'src/app/core/interfaces/tv-show';
 import { API_URL } from 'src/app/shared/constants/constants';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { SearchCriteria } from 'src/app/core/interfaces/search-criteria';
+import { SearchResponse } from 'src/app/core/interfaces/search-response';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class SearchService {
   searchTvShows(term = ""): Signal<TvShow[]> {
     this.lastSearchResults.set([]);
     this.searching.set(true);
-    this.http.get<SearchCriteria>(API_URL + `search?q=${term}&page=1`).subscribe(data => {
+    this.http.get<SearchResponse>(API_URL + `search?q=${term}&page=1`).subscribe(data => {
       this.lastSearchResults.set(data.tv_shows);
       this.searching.set(false);
     });
