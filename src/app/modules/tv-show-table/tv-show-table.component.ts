@@ -1,4 +1,4 @@
-import { TvShow } from './../../core/interfaces/tv-show';
+import { TvShow } from '../../core/models/tv-show';
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

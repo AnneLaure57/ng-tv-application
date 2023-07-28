@@ -1,5 +1,5 @@
 import { BehaviorSubject, Observable, debounceTime } from 'rxjs';
-import { TvShow } from './../../core/interfaces/tv-show';
+import { TvShow } from '../../core/models/tv-show';
 import { Component, Signal, computed, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvShowTableComponent } from '../tv-show-table/tv-show-table.component';

@@ -1,8 +1,8 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TvShow } from 'src/app/core/interfaces/tv-show';
+import { TvShow } from 'src/app/core/models/tv-show';
 import { API_URL } from 'src/app/shared/constants/constants';
-import { SearchResponse } from 'src/app/core/interfaces/search-response';
+import { SearchResponse } from 'src/app/core/models/search-response';
 
 @Injectable({
   providedIn: 'root'
