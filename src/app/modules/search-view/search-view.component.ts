@@ -16,10 +16,12 @@ export class SearchViewComponent {
   data!: Signal<TvShow[]>;
 
   constructor(private searchService: SearchService) {
-    setTimeout(() => this.search(), 100);
+    //S2 -> setTimeout(() => this.search(), 100);
+    this.search()
   }
 
-  search(term = "") {
+  search(term = "", event?: Event) {
+    event?.preventDefault();
     this.data = this.searchService.searchTvShows(term);
   }
 

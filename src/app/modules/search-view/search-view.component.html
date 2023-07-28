@@ -5,8 +5,9 @@
         <fieldset>
           <legend>TV Show Search</legend>
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Name of the show" #searchInput (input)="search(searchInput.value)"/>
-          <!--<button class="primary">Search</button>-->
+          <input type="text" id="name" placeholder="Name of the show" #searchInput/>
+          <!--<input type="text" id="name" placeholder="Name of the show" #searchInput (input)="search(searchInput.value)"/>-->
+          <button class="primary" (click)="search(searchInput.value, $event)">Search</button>
         </fieldset>
       </form>
     </div>
@@ -14,7 +15,6 @@
   <div class="row">
     <div class="col-sm-12">
       <app-tv-show-table [shows]="data()" [isLoading]="isSearchingData()">
-
       </app-tv-show-table>
     </div>
   </div>
