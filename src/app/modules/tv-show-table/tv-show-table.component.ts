@@ -1,5 +1,7 @@
+import { FavoritesService} from './../../shared/services/favorites.service';
+
 import { TvShow } from '../../core/models/tv-show';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,8 +13,18 @@ import { CommonModule } from '@angular/common';
 })
 export class TvShowTableComponent {
 
+  protected favoritesService = inject(FavoritesService);
+
   @Input() shows!: TvShow[];
 
   @Input() isLoading = false;
+
+  includeTvShowItem(id: number) {
+    return this.favoritesService.favorites().includes(id);
+  }
+
+  toggleFavoriteItem (id: number) {
+    return this.favoritesService.toggleFavorite(id);
+  }
 
 }

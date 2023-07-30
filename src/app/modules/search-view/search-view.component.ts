@@ -1,9 +1,10 @@
-import { BehaviorSubject, Observable, debounceTime } from 'rxjs';
+import { BehaviorSubject, Observable, debounceTime, filter, switchMap } from 'rxjs';
 import { TvShow } from '../../core/models/tv-show';
-import { Component, Signal, computed, effect, inject } from '@angular/core';
+import { Component, Signal, computed, effect, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvShowTableComponent } from '../tv-show-table/tv-show-table.component';
 import { SearchService } from './search.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-search-view',
@@ -12,15 +13,27 @@ import { SearchService } from './search.service';
   templateUrl: './search-view.component.html',
   styleUrls: ['./search-view.component.css']
 })
-export class SearchViewComponent {
+export class SearchViewComponent implements OnInit {
   data!: Signal<TvShow[]>;
+  searchInput$ = new BehaviorSubject<string>('');
 
-  constructor(private searchService: SearchService) {
+  ngOnInit() {
     this.search()
   }
 
+  constructor(private searchService: SearchService) {
+    this.searchInput$
+      .pipe(
+        filter((term) => term.length > 2),
+        debounceTime(1000),
+        takeUntilDestroyed()
+      ).subscribe(
+        (term) => {this.search(term)}
+      )
+  }
+
   search(term = "") {
-    this.data = this.searchService.searchTvShows(term);
+    this.data = this.searchService.searchTvShows(term)
   }
 
   isSearchingData() {
