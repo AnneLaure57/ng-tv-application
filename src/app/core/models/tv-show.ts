@@ -11,3 +11,6 @@ export interface TvShow {
   status:               Status;
   image_thumbnail_path: string;
 }
+
+export type TvShowId = TvShow["id"];
+export type TvShowIds = Array<TvShow["id"]>;

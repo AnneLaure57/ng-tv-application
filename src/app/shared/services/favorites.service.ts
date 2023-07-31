@@ -1,5 +1,5 @@
 import { Injectable, effect, inject, signal } from '@angular/core';
-import { TvShow } from 'src/app/core/models/tv-show';
+import { TvShowId, TvShowIds } from 'src/app/core/models/tv-show';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -8,9 +8,9 @@ import { StorageService } from './storage.service';
 export class FavoritesService {
 
   // With the generic type, pass the array of TvShow id
-  storage = inject(StorageService<Array<TvShow["id"]>>);
+  storage = inject(StorageService<TvShowIds>);
   // get the localStorage items (only TvShow id)
-  favoritesSignal = signal<Array<TvShow["id"]>>(this.storage.getData("favorites"));
+  favoritesSignal = signal<Array<TvShowId>>(this.storage.getData("favorites"));
   favorites = this.favoritesSignal.asReadonly();
 
   constructor() {
