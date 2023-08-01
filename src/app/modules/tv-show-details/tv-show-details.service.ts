@@ -15,9 +15,6 @@ export class TvShowDetailsService {
   constructor(private _http: HttpClient) {}
 
   getTvShowDetails(tvShowId: TvShowId) {
-    console.log(this._http.get<{tvShowDetails: TvShowDetails}>(API_URL + `show-details?q=${tvShowId}`).pipe(
-      map(data => data.tvShowDetails)
-    ));
     return this._http.get<{tvShowDetails: TvShowDetails}>(API_URL + `show-details?q=${tvShowId}`).pipe(
       map(data => data.tvShowDetails)
     );
