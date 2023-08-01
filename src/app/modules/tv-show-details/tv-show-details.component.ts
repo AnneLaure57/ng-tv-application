@@ -13,10 +13,10 @@ import { TvShowDetails } from 'src/app/core/models/tv-show-details';
 export class TvShowDetailsComponent {
 
   @Input()
-  showDetails!: TvShowDetails;
+  tvShowDetails!: TvShowDetails;
 
   constructor() {
-    console.log(this.showDetails);
+    console.log(this.tvShowDetails);
   }
 
   back() {
