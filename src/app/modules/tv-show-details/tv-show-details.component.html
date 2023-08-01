@@ -1,2 +1,24 @@
-<h2>{{tvShowDetails.name}}  - {{tvShowDetails.country}}</h2>
+<h2>{{tvShowDetails.name}}  - {{tvShowDetails.country}} - {{tvShowDetails.start_date | date:'yyyy'}} </h2>
 <hr/>
+<div>
+
+</div>
+<div class="section">
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-6">
+       <img [src]="tvShowDetails.image_thumbnail_path" />
+     </div>
+     <div class="col-sm-6" [innerHTML]="tvShowDetails.description">
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-sm-12">
+     <h5>Rating: {{tvShowDetails.rating | number: '1.0-2'}}/10 (rated by {{tvShowDetails.rating_count}} people)</h5>
+   </div>
+ </div>
+</div>
+<button (click)="back()" class="primary"><< Back</button>
+
+

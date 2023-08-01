@@ -6,7 +6,5 @@ import { inject } from '@angular/core';
 export const tvShowDetailsResolver: ResolveFn<TvShowDetails> = (route: ActivatedRouteSnapshot) => {
   const showId = Number(route.paramMap.get('id'));
   const tvShowDetailsService = inject(TvShowDetailsService);
-  let test = tvShowDetailsService.getTvShowDetails(showId);
-  console.log(test.subscribe());
-  return test;
+  return tvShowDetailsService.getTvShowDetails(showId);
 }
