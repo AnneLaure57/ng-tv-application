@@ -1,7 +1,7 @@
 import { Episode } from "./episode";
 import { TvShow } from "./tv-show";
 
-export interface TvShowDetails extends TvShow {
+export interface TvShowDetails extends TvShow{
   url:                  string;
   description:          string;
   description_source:   string;

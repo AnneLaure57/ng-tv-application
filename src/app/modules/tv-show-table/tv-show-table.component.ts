@@ -1,5 +1,5 @@
 import { FavoritesService} from './../../shared/services/favorites.service';
-
+import {RouterLink} from '@angular/router';
 import { TvShow } from '../../core/models/tv-show';
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-tv-show-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './tv-show-table.component.html',
   styleUrls: ['./tv-show-table.component.css']
 })
