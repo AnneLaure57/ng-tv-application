@@ -1,12 +1,10 @@
 import { TvShowDetails } from '../../core/models/tv-show-details';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Signal } from '@angular/core';
 import { TvShowId } from '../../core/models/tv-show';
 import { API_URL } from 'src/app/shared/constants/constants';
 import { Observable, map } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-
-
 
 @Injectable({
   providedIn: 'root'
