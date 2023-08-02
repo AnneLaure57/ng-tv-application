@@ -15,10 +15,6 @@ export class TvShowDetailsComponent {
   @Input()
   tvShowDetails!: TvShowDetails;
 
-  constructor() {
-    console.log(this.tvShowDetails);
-  }
-
   back() {
     history.back();
   }
