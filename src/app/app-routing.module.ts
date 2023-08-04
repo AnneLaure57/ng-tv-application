@@ -12,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  //  enabling component input binding with property bindToComponentInputs
+  // Enabling component input binding with property bindToComponentInputs
   imports: [RouterModule.forRoot(routes, {bindToComponentInputs: true})],
   exports: [RouterModule]
 })
