@@ -14,4 +14,5 @@ export interface TvShowDetails extends TvShow {
   genres:               string[];
   pictures:             string[];
   episodes:             Episode[];
+  seasonCount:          number;
 }

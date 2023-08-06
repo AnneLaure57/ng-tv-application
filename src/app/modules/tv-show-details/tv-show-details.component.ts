@@ -1,4 +1,4 @@
-import { DatePipe, DecimalPipe } from '@angular/common';
+import { DatePipe, DecimalPipe, I18nPluralPipe } from '@angular/common';
 import {Component, Input} from '@angular/core';
 import { TvShowDetails } from 'src/app/core/models/tv-show-details';
 
@@ -6,7 +6,7 @@ import { TvShowDetails } from 'src/app/core/models/tv-show-details';
   selector: 'app-tv-show-details',
   templateUrl: './tv-show-details.component.html',
   styleUrls: ['./tv-show-details.component.css'],
-  imports: [DatePipe, DecimalPipe],
+  imports: [DatePipe, DecimalPipe, I18nPluralPipe],
   standalone: true
 })
 

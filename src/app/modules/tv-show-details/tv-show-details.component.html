@@ -17,6 +17,9 @@
    <div class="col-sm-12">
      <h5><b>Rating :</b> {{tvShowDetails.rating | number: '1.0-2'}}/10 (rated by {{tvShowDetails.rating_count}} people)</h5>
    </div>
+   <div class="col-sm-12">
+    <h5>{{tvShowDetails.seasonCount | i18nPlural: {'=1': '# season', 'other': '# seasons'} }} - {{tvShowDetails.episodes.length}} episodes</h5>
+  </div>
  </div>
 </div>
 <button (click)="back()" class="primary"><< Back</button>
