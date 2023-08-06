@@ -10,7 +10,7 @@ import { TvShowDetails } from 'src/app/core/models/tv-show-details';
   standalone: true
 })
 
-export class TvShowDetailsComponent {
+export default class TvShowDetailsComponent {
 
   @Input()
   tvShowDetails!: TvShowDetails;
