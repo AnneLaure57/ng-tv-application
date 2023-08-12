@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.component';
 import { FavoriteCardComponent } from './modules/favorite-card/favorite-card.component';
+import { CountdownPipe } from './shared/pipes/countdown.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FavoritesViewComponent
+    FavoritesViewComponent,
+    CountdownPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FavoritesViewComponent
+    FavoriteCardComponent
   ],
   bootstrap: [AppComponent]
 })
