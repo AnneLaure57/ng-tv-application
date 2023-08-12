@@ -15,7 +15,8 @@ import { FavoriteCardComponent } from './modules/favorite-card/favorite-card.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FavoritesViewComponent
   ],
   bootstrap: [AppComponent]
 })
