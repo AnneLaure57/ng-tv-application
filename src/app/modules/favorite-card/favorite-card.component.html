@@ -12,7 +12,12 @@
     </div>
   </div>
   <img [src]="tvShowDetails.image_path" class="section media"/>
-  <div class="section">
-    Next episode: {{tvShowDetails.countdown?.air_date | date:'dd/MM/yyyy'}}
+  <div class="section" *ngIf="tvShowDetails.countdown?.air_date && tvShowDetails.status == 'Running'; else displayCountDown">
+    Next episode: {{tvShowDetails.countdown?.air_date | date:'dd/MM/yyyy'}} - available {{tvShowDetails | countdown}}
   </div>
+  <ng-template #displayCountDown>
+    <div class="section" #displayCountDown>
+      {{tvShowDetails | countdown}}
+    </div>
+  </ng-template>
 </div>
