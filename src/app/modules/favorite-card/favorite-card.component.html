@@ -6,8 +6,7 @@
       </div>
       <div class="col-md-1">
         <span class="icon-info" [routerLink]="['details/', tvShowDetails.id]"></span>
-        <span class="icon-bookmark highlight"
-              (click)="favoritesService.toggleFavorite(tvShowDetails.id)" ></span>
+        <span class="icon-bookmark highlight" [appToggleFavorite]="tvShowDetails.id" ></span>
       </div>
     </div>
   </div>

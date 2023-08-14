@@ -11,14 +11,14 @@ import { ToggleFavoriteDirective } from './shared/directives/toggle-favorite.dir
 @NgModule({
   declarations: [
     AppComponent,
-    FavoritesViewComponent,
-    ToggleFavoriteDirective
+    FavoritesViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FavoriteCardComponent
+    FavoriteCardComponent,
+    ToggleFavoriteDirective
   ],
   bootstrap: [AppComponent]
 })
