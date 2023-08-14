@@ -11,7 +11,7 @@ export class CountdownPipe implements PipeTransform {
   transform(tvShowDetails : TvShowDetails): String  {
     if (tvShowDetails.countdown?.air_date){
       return formatDistance(new Date(tvShowDetails.countdown.air_date), new Date(), {addSuffix: true});
-    } else if (tvShowDetails.status == "Ended" || tvShowDetails.status == "Canceled/Ended") {
+    } else if (tvShowDetails.status == "Canceled/Ended" || tvShowDetails.status == "Ended") {
       return "Show has ended";
     } else {
       return  tvShowDetails.status + " but no next episode date";
