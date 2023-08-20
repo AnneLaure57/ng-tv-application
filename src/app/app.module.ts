@@ -8,6 +8,7 @@ import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.
 import { FavoriteCardComponent } from './modules/favorite-card/favorite-card.component';
 import { ToggleFavoriteDirective } from './shared/directives/toggle-favorite.directive';
 import { PaginatorComponent } from './shared/components/paginator/paginator.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PaginatorComponent } from './shared/components/paginator/paginator.comp
     HttpClientModule,
     FavoriteCardComponent,
     ToggleFavoriteDirective,
-    PaginatorComponent
+    PaginatorComponent,
+    CardComponent
   ],
   bootstrap: [AppComponent]
 })
