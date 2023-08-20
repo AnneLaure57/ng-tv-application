@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TvShowTableComponent } from '../tv-show-table/tv-show-table.component';
 import { SearchService } from './search.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SearchResponse } from 'src/app/core/models/search-response';
 
 @Component({
   selector: 'app-search-view',
@@ -14,7 +15,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styleUrls: ['./search-view.component.css']
 })
 export class SearchViewComponent implements OnInit {
-  data!: Signal<TvShow[]>;
+  data!: Signal<SearchResponse>;
   searchInput$ = new BehaviorSubject<string>('');
 
   ngOnInit() {
@@ -32,8 +33,8 @@ export class SearchViewComponent implements OnInit {
       )
   }
 
-  search(term = "") {
-    this.data = this.searchService.searchTvShows(term)
+  search(term = "", page = 1, event?: Event) {
+    this.data = this.searchService.searchTvShows(term, page);
   }
 
   isSearchingData() {

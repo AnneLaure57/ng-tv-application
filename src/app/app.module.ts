@@ -7,6 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.component';
 import { FavoriteCardComponent } from './modules/favorite-card/favorite-card.component';
 import { ToggleFavoriteDirective } from './shared/directives/toggle-favorite.directive';
+import { PaginatorComponent } from './shared/components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ToggleFavoriteDirective } from './shared/directives/toggle-favorite.dir
     AppRoutingModule,
     HttpClientModule,
     FavoriteCardComponent,
-    ToggleFavoriteDirective
+    ToggleFavoriteDirective,
+    PaginatorComponent
   ],
   bootstrap: [AppComponent]
 })

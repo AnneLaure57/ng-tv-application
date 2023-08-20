@@ -12,7 +12,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <app-tv-show-table [shows]="data()" [isLoading]="isSearchingData()">
+      <app-tv-show-table [shows]="data()" [isLoading]="isSearchingData()" (pageChange)="search(searchInput.value, $event)">
       </app-tv-show-table>
     </div>
   </div>
