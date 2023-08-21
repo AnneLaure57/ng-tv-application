@@ -1,4 +1,3 @@
-import { TvShowDetails } from './../../../core/models/tv-show-details';
 import { Component, Input, Signal } from '@angular/core';
 
 @Component({
@@ -10,6 +9,6 @@ import { Component, Input, Signal } from '@angular/core';
 export class CardComponent {
 
   @Input()
-  tvShowDetails!: TvShowDetails;
+  title!: string;
 
 }

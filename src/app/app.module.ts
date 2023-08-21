@@ -6,10 +6,6 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { FavoritesViewComponent } from './modules/favorites-view/favorites-view.component';
 import { FavoriteCardComponent } from './modules/favorite-card/favorite-card.component';
-import { ToggleFavoriteDirective } from './shared/directives/toggle-favorite.directive';
-import { PaginatorComponent } from './shared/components/paginator/paginator.component';
-import { CardComponent } from './shared/components/card/card.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +15,7 @@ import { CardComponent } from './shared/components/card/card.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FavoriteCardComponent,
-    ToggleFavoriteDirective,
-    PaginatorComponent,
-    CardComponent
+    FavoriteCardComponent
   ],
   bootstrap: [AppComponent]
 })

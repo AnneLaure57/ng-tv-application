@@ -1,8 +1,20 @@
 <h2>{{tvShowDetails.name}}  - {{tvShowDetails.country}} - {{tvShowDetails.start_date | date:'yyyy'}} </h2>
 <hr/>
-<div>
 
-</div>
+<dialog #images>
+  <app-card [title]="tvShowDetails.name">
+    <ng-container actions>
+      <h5 (click)="images.close()">&times;</h5>
+    </ng-container>
+    <div body>
+      <img [src]="currentImage || tvShowDetails.image_path" />
+    </div>
+    <ng-container footer>
+      <img width="60px" class="small" *ngFor="let pic of tvShowDetails.pictures" [src]="pic" (click)="currentImage = pic" />
+    </ng-container>
+  </app-card>
+</dialog>
+
 <div class="section">
  <div class="container">
    <div class="row">
@@ -22,7 +34,7 @@
   </div>
  </div>
 </div>
-<button class="tertiary">Show images</button>
+<button (click)="images.show()" class="tertiary">Show images</button>
 <button (click)="back()" class="primary"><< Back</button>
 
 
