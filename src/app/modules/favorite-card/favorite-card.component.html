@@ -1,6 +1,6 @@
 <app-card [title]="tvShowDetails.name">
   <ng-container actions>
-    <span class="icon-info"  (click)="redirectToTvShowDetails(tvShowDetails.id)"></span>
+    <span class="icon-info" [routerLink]="['/details/', tvShowDetails.id]"></span>
     <span class="icon-bookmark highlight" [appToggleFavorite]="tvShowDetails.id" ></span>
   </ng-container>
   <img body [src]="tvShowDetails.image_path" class="section media"/>
