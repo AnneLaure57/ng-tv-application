@@ -21,10 +21,4 @@ export class FavoriteCardComponent {
 
   @Input({required: true})
   tvShowDetails!: TvShowDetails;
-
-  redirectToTvShowDetails(tvShowId: number) {
-      const url = `/details/${tvShowId}`;
-      window.location.href = url;
-  }
-
 }
